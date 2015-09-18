@@ -51,7 +51,7 @@ License: GNU General Public License, version 2
 
 Для вывода панели регистрации/авторизации в любом месте шаблона CS-Cart используйте смарти переменную `ulogin_authpanel`
 
-       {$ulogin_syncpanel nofilter}
+       {$ulogin_authpanel nofilter}
 
 Для вывода блока синхронизации используйте смарти переменную `ulogin_syncpanel`
 

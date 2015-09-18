@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+
+msgctxt "Addons::name::ulogin"
+msgid "ulogin"
+msgstr ":) uLogin"
+
+msgctxt "Addons::description::ulogin"
+msgid "Social Auth Widget"
+msgstr "Виджет авторизации через социальные сети"
+
+msgctxt "Languages::ulogin_auth_error_title"
+msgid "Auth Error."
+msgstr "Через данную форму выполнить вход/регистрацию невозможно."
+
+msgctxt "Languages::ulogin_auth_error_msg"
+msgid "Set email in uLogin fields."
+msgstr "Сообщите администратору сайта о следующей ошибке: Необходимо указать email в возвращаемых полях uLogin"
+
+msgctxt "Languages::ulogin_error"
+msgid "uLogin Error"
+msgstr "Ошибка работы uLogin"
+
+msgctxt "Languages::ulogin_error_token"
+msgid "uLogin Token Error"
+msgstr "Не удалось получить данные о пользователе с помощью токена."
+
+msgctxt "SettingsSections::ulogin::general"
+msgid "ulogin Settings"
+msgstr "Настройки uLogin"
+
+msgctxt "SettingsOptions::ulogin::ulogin_auth_id"
+msgid "ulogin ID Auth Form"
+msgstr "uLogin ID форма входа"
+
+msgctxt "SettingsOptions::ulogin::ulogin_sync_id"
+msgid "ulogin ID Sync Form"
+msgstr "uLogin ID форма синхронизации"
+
+msgctxt "SettingsOptions::ulogin::send_mail"
+msgid "Send Email"
+msgstr "Отправлять письмо при регистрации нового пользователя"
+
+msgctxt "SettingsOptions::ulogin::social_link"
+msgid "Social Link"
+msgstr "Сохранять ссылку на профиль"
+

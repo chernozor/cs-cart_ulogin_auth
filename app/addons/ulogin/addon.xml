@@ -22,10 +22,6 @@
                         <type>input</type>
                         <default_value/>
                     </item>
-                    <item id="send_mail">
-                        <type>checkbox</type>
-                        <default_value>Y</default_value>
-                    </item>
                 </items>
             </section>
         </sections>

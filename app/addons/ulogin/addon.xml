@@ -24,11 +24,7 @@
                     </item>
                     <item id="send_mail">
                         <type>checkbox</type>
-                        <default_value>N</default_value>
-                    </item>
-                    <item id="social_link">
-                        <type>checkbox</type>
-                        <default_value>N</default_value>
+                        <default_value>Y</default_value>
                     </item>
                 </items>
             </section>
@@ -45,8 +41,5 @@
             UNIQUE KEY `identity` (identity))
             ENGINE=MyISAM DEFAULT CHARSET=UTF8
         </item>
-        <!--<item for="uninstall">-->
-            <!--DROP TABLE IF EXISTS `?:ulogin`-->
-        <!--</item>-->
     </queries>
 </addon>

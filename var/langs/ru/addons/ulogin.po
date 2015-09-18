@@ -13,20 +13,76 @@ msgid "Social Auth Widget"
 msgstr "Виджет авторизации через социальные сети"
 
 msgctxt "Languages::ulogin_auth_error_title"
-msgid "Auth Error."
-msgstr "Через данную форму выполнить вход/регистрацию невозможно."
+msgid "Auth Error"
+msgstr "Через данную форму выполнить вход/регистрацию невозможно"
 
 msgctxt "Languages::ulogin_auth_error_msg"
-msgid "Set email in uLogin fields."
+msgid "Set Email in uLogin Return Fields"
 msgstr "Сообщите администратору сайта о следующей ошибке: Необходимо указать email в возвращаемых полях uLogin"
+
+msgctxt "Languages::ulogin_sync_error_title"
+msgid "uLogin Sync Error Title"
+msgstr "Ошибка Синхронизации"
+
+msgctxt "Languages::ulogin_sync_error_msg"
+msgid "ulogin Sync Error Msg"
+msgstr "Данный аккаунт привязан к другому пользователю"
 
 msgctxt "Languages::ulogin_error"
 msgid "uLogin Error"
 msgstr "Ошибка работы uLogin"
 
+msgctxt "Languages::ulogin_error_data"
+msgid "uLogin Error Data"
+msgstr "Данные о пользователе содержат неверный формат"
+
 msgctxt "Languages::ulogin_error_token"
 msgid "uLogin Token Error"
-msgstr "Не удалось получить данные о пользователе с помощью токена."
+msgstr "Не удалось получить данные о пользователе с помощью токена"
+
+msgctxt "Languages::ulogin_error_host"
+msgid "uLogin Error Host"
+msgstr "Адрес хоста не совпадает с оригиналом"
+
+msgctxt "Languages::ulogin_error_token_invalid"
+msgid "uLogin Error Token Invalid"
+msgstr "Неверный токен"
+
+msgctxt "Languages::ulogin_error_data_identity"
+msgid "uLogin Error Data Identity"
+msgstr "В возвращаемых данных отсутствует переменная 'identity'"
+
+msgctxt "Languages::ulogin_error_timeout"
+msgid "uLogin Error Host"
+msgstr "Время жизни токена истекло"
+
+msgctxt "Languages::ulogin_sync_title"
+msgid "uLogin Sync Title"
+msgstr "Синхронизация аккаунтов"
+
+msgctxt "Languages::ulogin_sync_help"
+msgid "uLogin Sync Help"
+msgstr "Привяжите ваши аккаунты соц. сетей к личному кабинету для быстрой авторизации через любой из них"
+
+msgctxt "Languages::ulogin_sync_accounts"
+msgid "uLogin Sync Accounts"
+msgstr "Привязанные аккаунты"
+
+msgctxt "Languages::ulogin_sync_accounts_delete"
+msgid "uLogin Sync Accounts Delete"
+msgstr "Вы можете удалить привязку к аккаунту, кликнув по значку"
+
+msgctxt "Languages::ulogin_sync_accounts_error"
+msgid "uLogin Sync Accounts Error"
+msgstr "Требуется привязка новой учётной записи социальной сети к этому аккаунту."
+
+msgctxt "Languages::ulogin_sync_accounts_error_msg"
+msgid "uLogin Sync Accounts Error Msg"
+msgstr "С данным аккаунтом уже связаны данные из другой социальной сети"
+
+msgctxt "Languages::ulogin_back"
+msgid "uLogin Back"
+msgstr "Вернуться"
 
 msgctxt "SettingsSections::ulogin::general"
 msgid "ulogin Settings"
@@ -43,8 +99,4 @@ msgstr "uLogin ID форма синхронизации"
 msgctxt "SettingsOptions::ulogin::send_mail"
 msgid "Send Email"
 msgstr "Отправлять письмо при регистрации нового пользователя"
-
-msgctxt "SettingsOptions::ulogin::social_link"
-msgid "Social Link"
-msgstr "Сохранять ссылку на профиль"
 

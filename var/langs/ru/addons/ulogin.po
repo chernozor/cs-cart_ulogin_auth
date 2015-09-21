@@ -6,7 +6,7 @@ msgstr ""
 
 msgctxt "Addons::name::ulogin"
 msgid "ulogin"
-msgstr ":) uLogin"
+msgstr "uLogin"
 
 msgctxt "Addons::description::ulogin"
 msgid "Social Auth Widget"

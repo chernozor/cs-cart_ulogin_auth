@@ -210,7 +210,7 @@ function fn_ulogin_registration_user($u_user, $in_db = 0) {
 		$user_data['user_login'] = fn_ulogin_generateNickname($u_user['first_name'], $u_user['last_name'], $u_user['nickname'], $u_user['bdate']);
 		$user_data['user_type'] = 'C';
 		$user_data['is_root'] = 'N';
-		$user_data['password1'] = $user_data['password2'] = '';
+		$user_data['password'] = $user_data['password1'] = $user_data['password2'] = fn_generate_password();
 		$user_data['title'] = ('mr');
 		$user_data['firstname'] = $u_user['first_name'];
 		$user_data['lastname'] = $u_user['last_name'];

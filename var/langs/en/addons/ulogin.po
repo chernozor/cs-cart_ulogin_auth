@@ -80,6 +80,18 @@ msgctxt "Languages::ulogin_sync_accounts_error_msg"
 msgid "uLogin Sync Accounts Error Msg"
 msgstr "С данным аккаунтом уже связаны данные из другой социальной сети"
 
+msgctxt "Languages::ulogin_sync_confirm_title"
+msgid "uLogin Sync Confirm Title"
+msgstr "Подтверждение аккаунта"
+
+msgctxt "Languages::ulogin_sync_accounts_confirm_error_msg"
+msgid "uLogin Sync Confirm Accounts Error"
+msgstr "Электронный адрес данного аккаунта совпадает с электронным адресом существующего пользователя"
+
+msgctxt "Languages::ulogin_sync_accounts_confirm_error"
+msgid "uLogin Sync Confirm Accounts Error Msg"
+msgstr "Требуется подтверждение на владение указанным email"
+
 msgctxt "Languages::ulogin_back"
 msgid "uLogin Back"
 msgstr "Вернуться"

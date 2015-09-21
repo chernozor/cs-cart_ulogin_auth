@@ -7,8 +7,8 @@ use Tygh\Registry;
 use Tygh\Http;
 
 function fn_ulogin_authpanel($place = 0) {
-	$backurl = Registry::get('config.http_location').'/'.Registry::get('config.current_url');
-	$redirect_uri = urlencode(Registry::get('config.http_location')."/index.php?dispatch=ulogin.login&backurl=$backurl");
+	$backurl = Registry::get('config.http_location') . '/' . Registry::get('config.current_url');
+	$redirect_uri = urlencode(Registry::get('config.http_location') . "/index.php?dispatch=ulogin.login&backurl=$backurl");
 	$ulogin_default_options = array();
 	$ulogin_default_options['display'] = 'small';
 	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook';
@@ -144,6 +144,7 @@ function fn_ulogin_CheckTokenError($u_user) {
 	}
 	if(!isset($u_user['identity'])) {
 		fn_set_notification('E', __('ulogin_error'), __('ulogin_error_data_identity'));
+
 		return false;
 	}
 
@@ -183,7 +184,7 @@ function fn_ulogin_getUserInfoByEmail($email) {
 function fn_ulogin_registration_user($u_user, $in_db = 0) {
 	if(!isset($u_user['email'])) {
 		Tygh::$app['view']->assign('ulogin_title', __('ulogin_auth_error_title'));
-		Tygh::$app['view']->assign('ulogin_error',__('ulogin_auth_error_msg'));
+		Tygh::$app['view']->assign('ulogin_error', __('ulogin_auth_error_msg'));
 		Tygh::$app['view']->assign('backurl', $_GET['backurl']);
 		Tygh::$app['view']->display('addons/ulogin/views/ulogin/error.tpl');
 		exit;
@@ -221,9 +222,9 @@ function fn_ulogin_registration_user($u_user, $in_db = 0) {
 		return $user_data['user_id'];
 	} else { // существует пользователь с таким email или это текущий пользователь
 		if(!isset($u_user["verified_email"]) || intval($u_user["verified_email"]) != 1) {
-			fn_print_die('<script src="//ulogin.ru/js/ulogin.js"  type="text/javascript"></script><script type="text/javascript">uLogin.mergeAccounts("' . $_POST['token'] . '")</script>' . ("Электронный адрес данного аккаунта совпадает с электронным адресом существующего пользователя. <br>Требуется подтверждение на владение указанным email.</br></br>") . ("Подтверждение аккаунта"));
-
-			return false;
+			Tygh::$app['view']->assign('token', $_REQUEST['token']);
+			Tygh::$app['view']->display('addons/ulogin/views/ulogin/confirm.tpl');
+			exit;
 		}
 		if(intval($u_user["verified_email"]) == 1) {
 			$user_id = $isLoggedIn ? $current_user : $user_id;

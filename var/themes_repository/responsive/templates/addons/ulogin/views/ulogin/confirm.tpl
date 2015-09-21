@@ -6,4 +6,4 @@
 <p>{__('ulogin_sync_accounts_confirm_error_msg')}</p>
 <p>{__('ulogin_sync_accounts_confirm_error')}</p>
 </body>
-{hook name="index:footer"}{/hook}
+{include file="common/scripts.tpl"}

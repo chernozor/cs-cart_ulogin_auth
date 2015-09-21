@@ -10,11 +10,11 @@ function fn_ulogin_authpanel($place = 0) {
 	$backurl = Registry::get('config.http_location') . '/' . Registry::get('config.current_url');
 	$redirect_uri = urlencode(Registry::get('config.http_location') . "/index.php?dispatch=ulogin.login&backurl=$backurl");
 	$ulogin_default_options = array();
-	$ulogin_default_options['display'] = 'small';
-	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook';
+	$ulogin_default_options['display'] = 'panel';
+	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook,google,yandex,twitter';
 	$ulogin_default_options['fields'] = 'first_name,last_name,email,photo,photo_big';
 	$ulogin_default_options['optional'] = 'sex,bdate,country,city';
-	$ulogin_default_options['hidden'] = 'other';
+	$ulogin_default_options['hidden'] = '';
 	$ulogin_options = array();
 	$options = Registry::get('addons.ulogin');
 	$ulogin_options['ulogin_id1'] = $options['ulogin_auth_id'];
@@ -35,7 +35,8 @@ function fn_ulogin_authpanel($place = 0) {
 		$default_panel = true;
 	}
 	$panel = '';
-	$panel .= '<div class="ulogin_panel"';
+	$panel .= '<p>'. __('ulogin_social_login').':</p>
+	<div class="ulogin_panel"';
 	if($default_panel) {
 		$ul_options['redirect_uri'] = $redirect_uri;
 		unset($ul_options['label']);

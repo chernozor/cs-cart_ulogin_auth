@@ -56,6 +56,10 @@ msgctxt "Languages::ulogin_error_timeout"
 msgid "uLogin Error Host"
 msgstr "Время жизни токена истекло"
 
+msgctxt "Languages::ulogin_social_login"
+msgid "uLogin Social Auth"
+msgstr "Войти через соц. сеть"
+
 msgctxt "Languages::ulogin_sync_title"
 msgid "uLogin Sync Title"
 msgstr "Синхронизация аккаунтов"

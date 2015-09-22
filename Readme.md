@@ -57,8 +57,6 @@ License: GNU General Public License, version 2
 
         {$ulogin_syncpanel nofilter}
 
-
-
 ## Изменения
 
 ####2.0.0.

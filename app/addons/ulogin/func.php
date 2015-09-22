@@ -35,7 +35,7 @@ function fn_ulogin_authpanel($place = 0) {
 		$default_panel = true;
 	}
 	$panel = '';
-	$panel .= '<p>'. __('ulogin_social_login').':</p>
+	$panel .= '<p>' . __('ulogin_social_login') . ':</p>
 	<div class="ulogin_panel"';
 	if($default_panel) {
 		$ul_options['redirect_uri'] = $redirect_uri;
@@ -62,8 +62,8 @@ function fn_ulogin_syncpanel($user_id = 0) {
 		return '';
 	}
 	$networks = array();
-	$res = db_query("SELECT * FROM ?:ulogin WHERE user_id = ?i", $user_id);
-	if(!empty($res->num_rows)) {
+	$res = db_get_array("SELECT * FROM ?:ulogin WHERE user_id = ?i", $user_id);
+	if($res) {
 		foreach($res as $network) {
 			$networks[] = $network;
 		}
@@ -210,7 +210,7 @@ function fn_ulogin_registration_user($u_user, $in_db = 0) {
 		$user_data['user_login'] = fn_ulogin_generateNickname($u_user['first_name'], $u_user['last_name'], $u_user['nickname'], $u_user['bdate']);
 		$user_data['user_type'] = 'C';
 		$user_data['is_root'] = 'N';
-		$user_data['password'] = $user_data['password1'] = $user_data['password2'] = fn_generate_password();
+		$user_data['password1'] = $user_data['password2'] = '';
 		$user_data['title'] = ('mr');
 		$user_data['firstname'] = $u_user['first_name'];
 		$user_data['lastname'] = $u_user['last_name'];

@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * Plugin Name: uLogin - виджет авторизации через социальные сети
+ * Plugin URI:  https://ulogin.ru/
+ * Description: uLogin — это инструмент, который позволяет пользователям получить единый доступ к различным
+ * Интернет-сервисам без необходимости повторной регистрации, а владельцам сайтов — получить дополнительный
+ * приток клиентов из социальных сетей и популярных порталов (Google, Яндекс, Mail.ru, ВКонтакте, Facebook и др.)
+ * Version:     2.0.0
+ * Author:      uLoginTeam
+ * Author URI:  https://ulogin.ru/
+ * License:     GPL2
+ */
 if(!defined('BOOTSTRAP')) {
 	die('Access denied');
 }
@@ -7,8 +17,7 @@ use Tygh\Registry;
 use Tygh\Http;
 
 function fn_ulogin_authpanel($place = 0) {
-	$backurl = Registry::get('config.http_location') . '/' . Registry::get('config.current_url');
-	$redirect_uri = urlencode(Registry::get('config.http_location') . "/index.php?dispatch=ulogin.login&backurl=$backurl");
+	$redirect_uri = urlencode(fn_url(Registry::get('config.http_location') . '/index.php?dispatch=ulogin.login'));
 	$ulogin_default_options = array();
 	$ulogin_default_options['display'] = 'panel';
 	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook,google,yandex,twitter';
@@ -210,13 +219,18 @@ function fn_ulogin_registration_user($u_user, $in_db = 0) {
 		$user_data['user_login'] = fn_ulogin_generateNickname($u_user['first_name'], $u_user['last_name'], $u_user['nickname'], $u_user['bdate']);
 		$user_data['user_type'] = 'C';
 		$user_data['is_root'] = 'N';
-		$user_data['password1'] = $user_data['password2'] = '';
-		$user_data['title'] = ('mr');
-		$user_data['firstname'] = $u_user['first_name'];
-		$user_data['lastname'] = $u_user['last_name'];
-		$user_data['phone'] = $u_user['phone'];
-		$user_data['birthday'] = $date['2'] . '-' . $date['1'] . '-' . $date['0'];
-		list($user_data['user_id'], $profile_id) = fn_update_user('', $user_data, $auth, true, true, false);
+		$user_data['salt'] = fn_generate_salt();
+		$user_data['password1'] = $user_data['password2'] = fn_generate_password();
+		$user_data['b_firstname'] = $u_user['first_name'];
+		$user_data['s_firstname'] = $u_user['first_name'];
+		$user_data['b_lastname'] = $u_user['last_name'];
+		$user_data['s_lastname'] = $u_user['last_name'];
+		$user_data['b_phone'] = isset($u_user['phone']) ? trim(preg_replace('/[^0-9]/', ' ', $u_user['phone'])) : '';
+		$user_data['s_phone'] = isset($u_user['phone']) ? trim(preg_replace('/[^0-9]/', ' ', $u_user['phone'])) : '';
+		$user_data['b_city'] = isset($u_user['city']) ? $u_user['city'] : '';
+		$user_data['s_city'] = isset($u_user['city']) ? $u_user['city'] : '';
+		$user_data['birthday'] = $date['2'];
+		list($user_data['user_id'], $profile_id) = fn_update_user('', $user_data, $auth, true, true, true);
 		$u_user_data = array('user_id' => $user_data['user_id'], 'identity' => $u_user['identity'], 'network' => $u_user['network']);
 		db_query("INSERT INTO ?:ulogin ?e", $u_user_data);
 

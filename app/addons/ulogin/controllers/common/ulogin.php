@@ -56,7 +56,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			fn_login_user($user_id);
 		}
 
-		$redirect_url =  Registry::get('config.http_location') . '/profiles-update/';
-		fn_redirect($redirect_url, true);
+		$redirect_url =  fn_url('/profiles-update/');
+
+		fn_redirect(isset($_GET['backurl']) ? $_GET['backurl']: $redirect_url, true);
 	}
 }

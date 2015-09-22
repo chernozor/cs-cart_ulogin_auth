@@ -17,7 +17,8 @@ use Tygh\Registry;
 use Tygh\Http;
 
 function fn_ulogin_authpanel($place = 0) {
-	$redirect_uri = urlencode(fn_url(Registry::get('config.http_location') . '/index.php?dispatch=ulogin.login'));
+	$backurl =  fn_url(Registry::get('config.current_url'));
+	$redirect_uri = urlencode(fn_url(Registry::get('config.http_location') . '/index.php?dispatch=ulogin.login&backurl='.$backurl));
 	$ulogin_default_options = array();
 	$ulogin_default_options['display'] = 'panel';
 	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook,google,yandex,twitter';

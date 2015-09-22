@@ -112,6 +112,10 @@ msgctxt "SettingsOptions::ulogin::ulogin_sync_id"
 msgid "ulogin ID Sync Form"
 msgstr "uLogin ID форма синхронизации"
 
-msgctxt "SettingsOptions::ulogin::send_mail"
-msgid "Send Email"
-msgstr "Отправлять письмо при регистрации нового пользователя"
+msgctxt "SettingsTooltips::ulogin::ulogin_auth_id"
+msgid "ulogin ID Auth Form Tooltip"
+msgstr "Идентификатор виджета авторизации и регистрации. Пустое поле - виджет по умолчанию"
+
+msgctxt "SettingsTooltips::ulogin::ulogin_sync_id"
+msgid "ulogin ID Auth Form Tooltip"
+msgstr "Идентификатор виджета панели синхронизации. Пустое поле - виджет по умолчанию"

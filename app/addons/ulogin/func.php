@@ -15,10 +15,11 @@ if(!defined('BOOTSTRAP')) {
 }
 use Tygh\Registry;
 use Tygh\Http;
+use Tygh\Mailer;
 
 function fn_ulogin_authpanel($place = 0) {
-	$backurl =  fn_url(Registry::get('config.current_url'));
-	$redirect_uri = urlencode(fn_url(Registry::get('config.http_location') . '/index.php?dispatch=ulogin.login&backurl='.$backurl));
+	$backurl = fn_url(Registry::get('config.current_url'));
+	$redirect_uri = urlencode(fn_url(Registry::get('config.http_location') . '/index.php?dispatch=ulogin.login&backurl=' . $backurl));
 	$ulogin_default_options = array();
 	$ulogin_default_options['display'] = 'panel';
 	$ulogin_default_options['providers'] = 'vkontakte,odnoklassniki,mailru,facebook,google,yandex,twitter';
